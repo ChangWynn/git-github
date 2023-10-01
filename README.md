@@ -77,7 +77,7 @@ git branch -D
 git branch --delete --force
 ```
 
-- switch branch
+- switch branches
 
 ```
 git switch <branch-name>
@@ -96,6 +96,8 @@ git checkout -b <branch-name>
 ```
 git merge <branch-to-merge-with>
 ```
+
+## Stashing
 
 - stash changes (put changes into a stash - save changes without committing them)
 
@@ -138,7 +140,7 @@ git stash drop stash@{<#>}
 // replace <#> with the stash number
 ```
 
-- delete all stashes
+- delete all stash
 
 ```
 git stash clear
