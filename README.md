@@ -1,4 +1,8 @@
+# Git - Github
+
 [Git docs](https://git-scm.com/docs)
+
+- [ ] - optional
 
 ## Basic Commands
 
@@ -31,6 +35,25 @@ git commit --amend
 ```
 git log
 git log --oneline
+```
+
+- view only unstaged changes since last commit
+
+```
+git diff [<filename>]
+```
+
+- view only staged changes since last commit
+
+```
+git diff --staged [<filename>]
+git diff --cached [<filename>]
+```
+
+- view ALL changes since last commit (staged + unstaged)
+
+```
+git diff HEAD [<filename>]
 ```
 
 ## Branching and Merging
