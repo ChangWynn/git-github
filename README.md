@@ -1,5 +1,3 @@
-# Git
-
 [Git docs](https://git-scm.com/docs)
 
 ## Basic Commands
@@ -77,7 +75,7 @@ git branch -D
 git branch --delete --force
 ```
 
-- switch branches
+- switch branch
 
 ```
 git switch <branch-name>
@@ -148,7 +146,53 @@ git stash clear
 
 ## Undoing changes and history
 
+- come back to a previous commit - at least the 7 first digit of the commit hash are needed. Do `git switch <branch-name>` to return to last commit of a branch or `git switch -c <new-branch-name>` to move to new branch from previous commit
+
+```
+git checkout <commit-hash>
+
+// come back one commit from HEAD (HEAD - 1, HEAD - 2)
+git checkout HEAD~1
+git checkout HEAD~2
+```
+
+- come back to previous branch
+
+```
+git switch -
+```
+
+- delete changes made since last commit
+
 ```
 git restore .
+
+// all below does the same
 git restore <filename1> <filename2>
+git checkout HEAD <filename1> <filename2>
+git checkout -- <filename1> <filename2>
+```
+
+- unstage files
+
+```
+git restore --staged <filename1> <filename2>
+```
+
+- soft-reset: delete past commit without deleting changes (useful when working on wrong branch)
+
+```
+git reset <commit-hash>
+```
+
+- hard-reset: delete past commit AND changes
+
+```
+git reset --hard <commit-hash>
+```
+
+- make a new commit that removes changes made from past commit
+
+```
+git revert <commit-hash>
 ```
