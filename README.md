@@ -1,8 +1,15 @@
 # Git - Github
 
-[Git docs](https://git-scm.com/docs)
+- Summary
+  - [Basic Git Commands](#basic-git-commands)
+  - [Inspection and Comparison](#inspection-and-comparison)
+  - [Branching and Merging](#branching-and-merging)
+  - [Stashing](#stashing)
+  - [Undoing changes and history](#undoing-changes-and-history)
+  - [Working with remote repositories](#working-with-remote-repositories)
 
-- [ ] - optional
+- Useful links
+  - [Git docs](https://git-scm.com/docs)
 
 ## Basic Git Commands
 
@@ -23,23 +30,24 @@ git add <filename1> <filename2>
 git commit
 git commit -m <message>
 git commit -a -m <message>
-git commit --amend
 ```
 
 ## Inspection and Comparison
+
+- view all commits
 
 ```
 git log
 git log --oneline
 ```
 
-- view only unstaged changes since last commit
+- view unstaged changes since last commit
 
 ```
 git diff [<filename>]
 ```
 
-- view only staged changes since last commit
+- view staged changes since last commit
 
 ```
 git diff --staged [<filename>]
@@ -165,7 +173,7 @@ git stash clear
 
 ## Undoing changes and history
 
-- come back to a previous commit - at least the 7 first digit of the commit hash are needed. Do `git switch <branch-name>` to return to last commit of a branch or `git switch -c <new-branch-name>` to move to new branch from previous commit
+- go back to a previous commit - at least the 7 first digit of the commit hash are needed.
 
 ```
 git checkout <commit-hash>
@@ -175,7 +183,7 @@ git checkout HEAD~1
 git checkout HEAD~2
 ```
 
-- come back to previous branch
+- go back to previous branch
 
 ```
 git switch -
@@ -198,19 +206,19 @@ git checkout -- <filename1> <filename2>
 git restore --staged <filename1> <filename2>
 ```
 
-- soft-reset: delete past commit without deleting changes (useful when working on wrong branch)
+- soft-reset: delete prior commits without deleting current changes (useful when working on wrong branch)
 
 ```
 git reset <commit-hash>
 ```
 
-- hard-reset: delete past commit AND changes
+- hard-reset: delete prior commit AND current changes
 
 ```
 git reset --hard <commit-hash>
 ```
 
-- make a new commit that removes changes made from past commit
+- make a new commit that removes changes made from prior commits
 
 ```
 git revert <commit-hash>
@@ -222,16 +230,31 @@ git revert <commit-hash>
 git clone <repo-url>
 ```
 
+- git remote
+
 ```
 git remote -v
-git remote add <name> <url>
-git remote rename <old-name> <new-name>
-git remote remove <name>
 ```
 
 ```
-git push
-git push <remote> <branch-to-push>
+git remote add <name> <url>
+```
+
+```
+git remote rename <old-name> <new-name>
+```
+
+```
+git remote remove <name>
+```
+
+- git push
+
+```
+git push [<remote>] [<branch>]
+```
+
+```
 git push -u origin main
 git push --set-upstream <remote> <branch-to-push>
 ```
@@ -239,15 +262,12 @@ git push --set-upstream <remote> <branch-to-push>
 - get latest changes from remote repository as new branch in local (doesn't merge with current HEAD)
 
 ```
-git fetch
-git fetch <remote>
-git fetch <remote> <remote>
+git fetch [<remote>] [<branch>]
 ```
 
 - retrieve latest changes of from remote repository and merge with current HEAD
 
 ```
-git pull
 git pull <remote> <branch>
 ```
 
