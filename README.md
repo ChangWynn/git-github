@@ -4,14 +4,10 @@
 
 - [ ] - optional
 
-## Basic Commands
+## Basic Git Commands
 
 ```
 git init
-```
-
-```
-git clone <repo-link>
 ```
 
 ```
@@ -218,4 +214,57 @@ git reset --hard <commit-hash>
 
 ```
 git revert <commit-hash>
+```
+
+## Working with remote repositories
+
+```
+git clone <repo-url>
+```
+
+```
+git remote -v
+git remote add <name> <url>
+git remote rename <old-name> <new-name>
+git remote remove <name>
+```
+
+```
+git push
+git push <remote> <branch-to-push>
+git push -u origin main
+git push --set-upstream <remote> <branch-to-push>
+```
+
+- get latest changes from remote repository as new branch in local (doesn't merge with current HEAD)
+
+```
+git fetch
+git fetch <remote>
+git fetch <remote> <remote>
+```
+
+- retrieve latest changes of from remote repository and merge with current HEAD
+
+```
+git pull
+git pull <remote> <branch>
+```
+
+- view remote branches
+
+```
+git branch -r
+```
+
+- move to remote branch
+
+```
+git switch <remote>
+```
+
+- switch to previous commit in a remote branch
+
+```
+git checkout <remote>/<branch>
 ```
