@@ -1,6 +1,7 @@
 # Git - Github
 
 - Summary
+
   - [Basic Git Commands](#basic-git-commands)
   - [Inspection and Comparison](#inspection-and-comparison)
   - [Branching and Merging](#branching-and-merging)
@@ -222,6 +223,19 @@ git reset --hard <commit-hash>
 
 ```
 git revert <commit-hash>
+```
+
+- re-write commit history and add them to the tip of `main`
+
+```
+git rebase
+```
+
+- re-write commits from HEAD - n commit or commit-hash
+
+```
+git rebase -i HEAD~<N>
+git rebase --interactive HEAD~<N>
 ```
 
 ## Working with remote repositories
