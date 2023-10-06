@@ -302,3 +302,68 @@ git switch <remote>
 ```
 git checkout <remote>/<branch>
 ```
+
+## Tags
+
+- create lightweight tag
+
+```
+git tag <tagname>
+```
+
+- create annotated tag (with netadata such as author, time etc...)
+
+```
+git tag -a <tagname> (will open text editor)
+```
+
+- create a tag on a previous commit
+
+```
+git tag <tagname> <commit-hash>
+```
+
+- move a tag to a different commit
+
+```
+git tag -f <tagname> <commit-hash>
+```
+
+- delete a tag
+
+```
+git tag -d <tagname>
+```
+
+- view tag list
+
+```
+git tag
+git tag -l
+```
+
+- filter tags
+
+```
+git tags -l "<RGEX>"
+
+// i.e: git tags -l "*beta*"
+```
+
+- move to a specific tag
+
+```
+git checkout <tag>
+```
+
+- view tag details
+
+```
+git show <tag>
+```
+
+- compare tags
+
+```
+git diff <tag1> <tag2>
+```
